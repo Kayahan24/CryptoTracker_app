@@ -1,4 +1,4 @@
-<h1 align="center">Crypto Tracker Uygulaması</h1>
+<h1 align="center">CoinX - Crypto Tracker Uygulaması</h1>
 
 <p align="center">  
   Crypto Tracker CoinGecko Api verilerini kullanarak 50 kripto para birimini gösteren bir mobil uygulamadır. <a href="https://www.coingecko.com/en/api/documentation">CoinGecko API</a>.
