@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-<img src="demo.gif" style="display: block;
+<img src="//demo.gif" style="display: block;
   margin-left: auto;
   margin-right: auto;
   width: 30%"/>
