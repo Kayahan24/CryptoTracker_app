@@ -1,7 +1,7 @@
-<h1 align="center">Cryptmark</h1>
+<h1 align="center">Crypto Tracker Uygulaması</h1>
 
 <p align="center">  
-🎯 Cryptmark is a mobile app that tracks 50 cryptocurrencies using data from <a href="https://www.coingecko.com/en/api/documentation">CoinGecko API</a>.
+  Crypto Tracker CoinGecko Api verilerini kullanarak 50 kripto para birimini gösteren bir mobil uygulamadır. <a href="https://www.coingecko.com/en/api/documentation">CoinGecko API</a>.
 </p>
 
 <p align="center">
@@ -13,9 +13,9 @@
 
 </br>
 
-<h2>Screenshots</h2>
+<h2>Ekran Görüntüleri</h2>
 
-<h3>Market Page</h3>
+<h3>Market Sayfası</h3>
 
 <p align="center">
 <img src="/screenshots/market_page.png" style="display: block;
@@ -24,7 +24,7 @@
   width: 30%"/>
 </p>
 
-<h3>Explore Page</h3>
+<h3>Hesaplama Sayfası</h3>
 
 <p align="center">
 <img src="/screenshots/explore_page.png" style="display: block;
@@ -33,7 +33,7 @@
   width: 30%"/>
 </p>
 
-<h3>Watchlist Page</h3>
+<h3>Takip Sayfası</h3>
 
 <p align="center">
 <img src="/screenshots/watchlist_page.png" style="display: block;
@@ -42,7 +42,7 @@
   width: 30%"/>
 </p>
 
-<h3>Coin Detail Page</h3>
+<h3>Coin Detay Sayfası</h3>
 
 <p align="center">
 <img src="/screenshots/coin_detail_page.png" style="display: block;
@@ -51,14 +51,14 @@
   width: 30%"/>
 </p>
 
-## Technologies Used
+## Kullanılan Teknolojiler
 - [Flutter](https://flutter.dev/)
 - [Flutter Bricks](https://www.flutterbricks.com/)
 - [CoinGecko API](https://www.coingecko.com/en/api/documentation)
 - [Figma](https://www.figma.com/)
 
 
-## Dart and Flutter Packages Used
+## Kullanılan Paketler
 - [animated_splash_screen](https://pub.dev/packages/animated_splash_screen)
 - [cached_network_image](https://pub.dev/packages/cached_network_image)
 - [flutter_bloc](https://pub.dev/packages/flutter_bloc)
