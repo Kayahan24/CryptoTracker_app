@@ -27,8 +27,7 @@ Route generateRoute(RouteSettings settings) {
     default:
       return MaterialPageRoute(
           builder: (_) => Scaffold(
-                body: Center(
-                    child: Text('No route defined for ${settings.name}')),
+                body: Center(child: Text('Adres bulunamadı ${settings.name}')),
               ));
   }
 }

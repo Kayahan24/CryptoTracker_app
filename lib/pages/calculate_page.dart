@@ -304,14 +304,14 @@ class _CalculatePageState extends State<CalculatePage> {
                                               _tot.text = calc.toString() +
                                                   ' $coinname';
                                             }
-                                          } else {}
+                                          }
                                         },
                                         child: Container(
                                           alignment: Alignment.center,
                                           height: size.height / 14,
                                           width: size.width / 1.5,
                                           decoration: BoxDecoration(
-                                              color: Colors.red,
+                                              color: Colors.green,
                                               borderRadius:
                                                   BorderRadius.circular(5)),
                                           child: const Text(

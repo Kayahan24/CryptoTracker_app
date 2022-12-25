@@ -18,7 +18,7 @@ class ApplicationBar extends StatelessWidget with PreferredSizeWidget {
             backgroundColor: Colors.white,
             elevation: 1,
             title: const Text(
-              "Cryptmark",
+              "Crypto Tracker",
               style: TextStyle(color: Colors.black),
             ),
             actions: <Widget>[

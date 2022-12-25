@@ -98,7 +98,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.orange,
+        selectedItemColor: Colors.green,
         onTap: _onItemTapped,
       ),
       body: _tabs[_selectedIndex],
