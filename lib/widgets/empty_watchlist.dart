@@ -19,12 +19,12 @@ class _EmptyWatchlistState extends State<EmptyWatchlist> {
       children: [
         Image.asset('assets/images/empty_watchlist.png'),
         const Text(
-          'There\'s nothing here.',
+          'Burada hiçbir şey yok.',
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
         ),
         const SizedBox(height: 20),
         const Text(
-          'Add a new coin to get started!',
+          'Başlamak için bir coin ekle!',
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
         ),
       ],

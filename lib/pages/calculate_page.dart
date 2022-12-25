@@ -120,194 +120,200 @@ class _CalculatePageState extends State<CalculatePage> {
                         if (snapshot.hasData) {
                           return Center(
                             child: SingleChildScrollView(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(top: 150),
-                                    child: Container(
-                                      width: size.width / 2.5,
-                                      height: size.height / 15,
-                                      child: DropdownButtonFormField(
-                                          value: this.dropdownValue,
-                                          elevation: 16,
-                                          menuMaxHeight: 200,
-                                          hint: const Text("Select Currency"),
-                                          isExpanded: false,
-                                          items: list
-                                              .map<DropdownMenuItem<String>>(
-                                                  (String valueCurrency) {
-                                            return DropdownMenuItem<String>(
-                                              value: valueCurrency,
-                                              child: Padding(
-                                                  padding: const EdgeInsets
-                                                          .symmetric(
-                                                      horizontal: 10),
-                                                  child: Align(
-                                                    alignment: Alignment.center,
-                                                    child: Text(
-                                                      valueCurrency,
-                                                      textAlign:
-                                                          TextAlign.right,
-                                                      style: const TextStyle(
-                                                        fontSize: 20,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                      ),
-                                                    ),
-                                                  )),
-                                            );
-                                          }).toList(),
-                                          onChanged: (valueCurrency) {
-                                            setState(() {
-                                              dropdownValue =
-                                                  valueCurrency.toString();
-                                            });
-                                          }),
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    height: 20,
-                                  ),
-                                  SizedBox(
-                                    width: size.width / 1.5,
-                                    child: TextField(
-                                      controller: _totvalue,
-                                      decoration: InputDecoration(
-                                          labelText: "Price",
-                                          labelStyle: TextStyle(
-                                              fontSize: 15,
-                                              color: Colors.grey.shade400),
-                                          border: OutlineInputBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(10))),
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    height: 20,
-                                  ),
-                                  Container(
-                                    width: size.width / 2.5,
-                                    height: size.height / 15,
-                                    child: DropdownButton(
-                                        value: coinname,
-                                        elevation: 16,
-                                        menuMaxHeight: 200,
-                                        hint: const Text("Select Coin"),
-                                        isExpanded: false,
-                                        items: state.coinModel.map((items) {
-                                          return DropdownMenuItem(
-                                            child: Padding(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 10),
-                                              child: Row(
-                                                children: [
-                                                  Text(
-                                                    items['symbol']
-                                                        .toString()
-                                                        .toUpperCase(),
-                                                    style: const TextStyle(
-                                                        fontSize: 20,
-                                                        fontWeight:
-                                                            FontWeight.w700),
-                                                  ),
-                                                  Padding(
+                              child: SizedBox(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 150),
+                                      child: Container(
+                                        width: size.width / 2.5,
+                                        height: size.height / 15,
+                                        child: DropdownButtonFormField(
+                                            value: this.dropdownValue,
+                                            elevation: 16,
+                                            menuMaxHeight: 200,
+                                            hint: const Text("Birim Seciniz"),
+                                            isExpanded: false,
+                                            items: list
+                                                .map<DropdownMenuItem<String>>(
+                                                    (String valueCurrency) {
+                                              return DropdownMenuItem<String>(
+                                                value: valueCurrency,
+                                                child: Padding(
                                                     padding: const EdgeInsets
                                                             .symmetric(
                                                         horizontal: 10),
-                                                    child: CachedNetworkImage(
-                                                      imageUrl: items['image'],
-                                                      width: 20,
-                                                      height: 20,
-                                                    ),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                            value: items['symbol'],
-                                          );
-                                        }).toList(),
-                                        onChanged: (value) {
-                                          setState(() {
-                                            coinname = value as String;
-                                          });
-                                        }),
-                                  ),
-                                  const SizedBox(
-                                    height: 20,
-                                  ),
-                                  SizedBox(
-                                    width: size.width / 1.1,
-                                    child: TextField(
-                                      controller: _tot,
-                                      readOnly: true,
-                                      decoration: InputDecoration(
-                                          labelText: "Total",
-                                          labelStyle: TextStyle(
-                                              fontSize: 15,
-                                              color: Colors.grey.shade400),
-                                          border: OutlineInputBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(10))),
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    height: 20,
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      // cal = this.coinprice * 300;
-                                      // result = cal;
-                                      String? temp;
-
-                                      for (var a in state.coinModel
-                                          .where((element) => element['symbol']
-                                              .toString()
-                                              .toLowerCase()
-                                              .contains(coinname.toLowerCase()))
-                                          .toList()) {
-                                        temp = json.encode(a['current_price']);
-                                      }
-                                      if (double.parse(_totvalue.text) > 0) {
-                                        if (dropdownValue.toLowerCase() ==
-                                            'tl') {
-                                          var calc =
-                                              double.parse(_totvalue.text) /
-                                                  double.parse(temp!);
-
-                                          _tot.text =
-                                              calc.toString() + ' $coinname';
-                                        } else if (dropdownValue
-                                                .toLowerCase() ==
-                                            'usd') {
-                                          var calc =
-                                              double.parse(_totvalue.text) /
-                                                  (double.parse(temp!) /
-                                                      snapshot.data!.id);
-                                          _tot.text = calc.toString() +
-                                              ' $coinname' +
-                                              ' usd';
-                                        }
-                                      } else {}
-                                    },
-                                    child: Container(
-                                      alignment: Alignment.center,
-                                      height: size.height / 14,
-                                      width: size.width / 1.5,
-                                      decoration: BoxDecoration(
-                                          color: Colors.red,
-                                          borderRadius:
-                                              BorderRadius.circular(5)),
-                                      child: const Text(
-                                        "Dönüştür",
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
+                                                    child: Align(
+                                                      alignment:
+                                                          Alignment.center,
+                                                      child: Text(
+                                                        valueCurrency,
+                                                        textAlign:
+                                                            TextAlign.right,
+                                                        style: const TextStyle(
+                                                          fontSize: 20,
+                                                          fontWeight:
+                                                              FontWeight.w700,
+                                                        ),
+                                                      ),
+                                                    )),
+                                              );
+                                            }).toList(),
+                                            onChanged: (valueCurrency) {
+                                              setState(() {
+                                                dropdownValue =
+                                                    valueCurrency.toString();
+                                              });
+                                            }),
                                       ),
                                     ),
-                                  )
-                                ],
+                                    const SizedBox(
+                                      height: 20,
+                                    ),
+                                    SizedBox(
+                                      width: size.width / 1.5,
+                                      child: TextField(
+                                        controller: _totvalue,
+                                        decoration: InputDecoration(
+                                            labelText: "Miktar",
+                                            labelStyle: TextStyle(
+                                                fontSize: 15,
+                                                color: Colors.grey.shade400),
+                                            border: OutlineInputBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(10))),
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      height: 20,
+                                    ),
+                                    Container(
+                                      width: size.width / 2.5,
+                                      height: size.height / 15,
+                                      child: DropdownButton(
+                                          value: coinname,
+                                          elevation: 16,
+                                          menuMaxHeight: 200,
+                                          hint: const Text("Coin Seciniz"),
+                                          isExpanded: false,
+                                          items: state.coinModel.map((items) {
+                                            return DropdownMenuItem(
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 10),
+                                                child: Row(
+                                                  children: [
+                                                    Text(
+                                                      items['symbol']
+                                                          .toString()
+                                                          .toUpperCase(),
+                                                      style: const TextStyle(
+                                                          fontSize: 20,
+                                                          fontWeight:
+                                                              FontWeight.w700),
+                                                    ),
+                                                    Padding(
+                                                      padding: const EdgeInsets
+                                                              .symmetric(
+                                                          horizontal: 10),
+                                                      child: CachedNetworkImage(
+                                                        imageUrl:
+                                                            items['image'],
+                                                        width: 20,
+                                                        height: 20,
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
+                                              ),
+                                              value: items['symbol'],
+                                            );
+                                          }).toList(),
+                                          onChanged: (value) {
+                                            setState(() {
+                                              coinname = value as String;
+                                            });
+                                          }),
+                                    ),
+                                    const SizedBox(
+                                      height: 20,
+                                    ),
+                                    SizedBox(
+                                      width: size.width / 1.1,
+                                      child: TextField(
+                                        controller: _tot,
+                                        readOnly: true,
+                                        decoration: InputDecoration(
+                                            labelText: "Sonuc",
+                                            labelStyle: TextStyle(
+                                                fontSize: 15,
+                                                color: Colors.grey.shade400),
+                                            border: OutlineInputBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(10))),
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      height: 20,
+                                    ),
+                                    GestureDetector(
+                                      onTap: () {
+                                        // cal = this.coinprice * 300;
+                                        // result = cal;
+                                        String? temp;
+
+                                        for (var a in state.coinModel
+                                            .where((element) =>
+                                                element['symbol']
+                                                    .toString()
+                                                    .toLowerCase()
+                                                    .contains(
+                                                        coinname.toLowerCase()))
+                                            .toList()) {
+                                          temp =
+                                              json.encode(a['current_price']);
+                                        }
+                                        if (double.parse(_totvalue.text) > 0) {
+                                          if (dropdownValue.toLowerCase() ==
+                                              'tl') {
+                                            var calc =
+                                                double.parse(_totvalue.text) /
+                                                    double.parse(temp!);
+
+                                            _tot.text =
+                                                calc.toString() + ' $coinname';
+                                          } else if (dropdownValue
+                                                  .toLowerCase() ==
+                                              'usd') {
+                                            var calc =
+                                                double.parse(_totvalue.text) /
+                                                    (double.parse(temp!) /
+                                                        snapshot.data!.id);
+                                            _tot.text =
+                                                calc.toString() + ' $coinname';
+                                          }
+                                        } else {}
+                                      },
+                                      child: Container(
+                                        alignment: Alignment.center,
+                                        height: size.height / 14,
+                                        width: size.width / 1.5,
+                                        decoration: BoxDecoration(
+                                            color: Colors.red,
+                                            borderRadius:
+                                                BorderRadius.circular(5)),
+                                        child: const Text(
+                                          "Dönüştür",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                           );
