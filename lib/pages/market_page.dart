@@ -143,7 +143,7 @@ class _MarketPageState extends State<MarketPage> {
                               width: width * .2,
                               alignment: Alignment.centerRight,
                               child: Text(
-                                'Price'.toUpperCase(),
+                                'Fiyat'.toUpperCase(),
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: themeNotifier.isDark
@@ -158,7 +158,7 @@ class _MarketPageState extends State<MarketPage> {
                               width: width * .2,
                               alignment: Alignment.centerRight,
                               child: Text(
-                                '24H'.toUpperCase(),
+                                '24S'.toUpperCase(),
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: themeNotifier.isDark
@@ -177,7 +177,7 @@ class _MarketPageState extends State<MarketPage> {
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   Text(
-                                    'Market Cap'.toUpperCase(),
+                                    'Piyasa Degeri'.toUpperCase(),
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         color: themeNotifier.isDark

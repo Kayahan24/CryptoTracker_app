@@ -24,8 +24,8 @@ class _HomePageState extends State<HomePage> {
 
   final List<String> _tabTitle = [
     'Market',
-    'Calculate',
-    'Watchlist',
+    'Hesapla',
+    'Takip Et',
   ];
 
   void _onItemTapped(int index) {
@@ -85,7 +85,7 @@ class _HomePageState extends State<HomePage> {
                   ? Colors.grey.shade200
                   : Colors.grey.shade800,
             ),
-            label: 'Calculate',
+            label: 'Hesapla',
           ),
           BottomNavigationBarItem(
             icon: Icon(
@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> {
                   ? Colors.grey.shade200
                   : Colors.grey.shade800,
             ),
-            label: 'Watchlist',
+            label: 'Takip Et',
           ),
         ],
         currentIndex: _selectedIndex,

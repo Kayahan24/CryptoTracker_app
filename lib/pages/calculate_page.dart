@@ -57,11 +57,7 @@ class _CalculatePageState extends State<CalculatePage> {
         cubit.fetchCoins();
         setApiLastFetchTime();
       }
-    }
-    // Else if API's last fetch time is null (the API hasn't been fetched ever)
-    // fetch coins from API
-    // and update API's last fetch time
-    else {
+    } else {
       cubit.fetchCoins();
       setApiLastFetchTime();
     }
@@ -273,24 +269,27 @@ class _CalculatePageState extends State<CalculatePage> {
                                           .toList()) {
                                         temp = json.encode(a['current_price']);
                                       }
+                                      if (double.parse(_totvalue.text) > 0) {
+                                        if (dropdownValue.toLowerCase() ==
+                                            'tl') {
+                                          var calc =
+                                              double.parse(_totvalue.text) /
+                                                  double.parse(temp!);
 
-                                      if (dropdownValue.toLowerCase() == 'tl') {
-                                        var calc =
-                                            double.parse(_totvalue.text) /
-                                                double.parse(temp!);
-
-                                        _tot.text =
-                                            calc.toString() + ' $coinname';
-                                      } else if (dropdownValue.toLowerCase() ==
-                                          'usd') {
-                                        var calc =
-                                            double.parse(_totvalue.text) /
-                                                (double.parse(temp!) /
-                                                    snapshot.data!.id);
-                                        _tot.text = calc.toString() +
-                                            ' $coinname' +
-                                            ' usd';
-                                      }
+                                          _tot.text =
+                                              calc.toString() + ' $coinname';
+                                        } else if (dropdownValue
+                                                .toLowerCase() ==
+                                            'usd') {
+                                          var calc =
+                                              double.parse(_totvalue.text) /
+                                                  (double.parse(temp!) /
+                                                      snapshot.data!.id);
+                                          _tot.text = calc.toString() +
+                                              ' $coinname' +
+                                              ' usd';
+                                        }
+                                      } else {}
                                     },
                                     child: Container(
                                       alignment: Alignment.center,
@@ -301,7 +300,7 @@ class _CalculatePageState extends State<CalculatePage> {
                                           borderRadius:
                                               BorderRadius.circular(5)),
                                       child: const Text(
-                                        "Convert",
+                                        "Dönüştür",
                                         style: TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.bold),

@@ -92,7 +92,7 @@ class _WatchlistPageState extends State<WatchlistPage> {
                                 width: width * .2,
                                 alignment: Alignment.centerRight,
                                 child: Text(
-                                  'Price'.toUpperCase(),
+                                  'Fiyat'.toUpperCase(),
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       color: themeNotifier.isDark
@@ -107,7 +107,7 @@ class _WatchlistPageState extends State<WatchlistPage> {
                                 width: width * .2,
                                 alignment: Alignment.centerRight,
                                 child: Text(
-                                  '24H'.toUpperCase(),
+                                  '24S'.toUpperCase(),
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       color: themeNotifier.isDark
@@ -126,7 +126,7 @@ class _WatchlistPageState extends State<WatchlistPage> {
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
                                     Text(
-                                      'Market Cap'.toUpperCase(),
+                                      'Piyasa Degeri'.toUpperCase(),
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           color: themeNotifier.isDark

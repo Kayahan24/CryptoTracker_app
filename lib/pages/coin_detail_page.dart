@@ -67,16 +67,13 @@ class _CoinDetailState extends State<CoinDetail> {
     prefs.setStringList('watchlist', currentWatchlist);
   }
 
-  // Check if coin exists in watchlist or not
   bool doesCoinExists(coin) {
-    // If coin exists in watchlist, return true
     if (currentWatchlist
             .where((item) => json.decode(item)['symbol'] == coin)
             .length >
         0) {
       return true;
     }
-    // Else if coin does not exist in watchlist, return false
     return false;
   }
 
@@ -179,8 +176,6 @@ class _CoinDetailState extends State<CoinDetail> {
                       : Colors.grey.shade600,
                 ),
                 onPressed: () {
-                  // If coin exists, remove coin from watchlist
-                  // Else, add coin to watchlist
                   doesCoinExists(widget.coinDetail['symbol'])
                       ? removeCoinFromWatchlist(widget.coinDetail)
                       : addCoinToWatchlist(widget.coinDetail);
@@ -194,8 +189,6 @@ class _CoinDetailState extends State<CoinDetail> {
                     themeNotifier.isDark ? Colors.white : Colors.grey.shade800,
               ),
               onPressed: () {
-                // Remove current page from Navigator stack
-                // and navigate to previous page
                 Navigator.pop(context);
               },
             ),
@@ -207,7 +200,7 @@ class _CoinDetailState extends State<CoinDetail> {
                 alignment: Alignment.centerLeft,
                 padding: const EdgeInsets.only(left: 20),
                 child: Text(
-                  '\$${NumberFormat("#,##0.00", "en_US").format(widget.coinDetail['current_price'].toDouble())}',
+                  '${NumberFormat("#,##0.00", "en_US").format(widget.coinDetail['current_price'].toDouble())} ₺',
                   style: const TextStyle(
                       fontSize: 50, fontWeight: FontWeight.w700),
                 ),
@@ -284,7 +277,7 @@ class _CoinDetailState extends State<CoinDetail> {
                                         : Colors.grey.shade700,
                                     fontSize: 15)),
                             Text(
-                                '\$${NumberFormat('###,###,000').format(widget.coinDetail['market_cap'])}',
+                                '${NumberFormat('###,###,000').format(widget.coinDetail['market_cap'])} ₺',
                                 style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     color: themeNotifier.isDark
@@ -316,7 +309,7 @@ class _CoinDetailState extends State<CoinDetail> {
                                         : Colors.grey.shade700,
                                     fontSize: 15)),
                             Text(
-                                '\$${NumberFormat('###,###,000').format(widget.coinDetail['total_volume'])}',
+                                '${NumberFormat('###,###,000').format(widget.coinDetail['total_volume'])} ₺',
                                 style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     color: themeNotifier.isDark
@@ -348,7 +341,7 @@ class _CoinDetailState extends State<CoinDetail> {
                                         : Colors.grey.shade700,
                                     fontSize: 15)),
                             Text(
-                                '\$${NumberFormat('###,###,000').format(widget.coinDetail['circulating_supply'])}',
+                                '${NumberFormat('###,###,000').format(widget.coinDetail['circulating_supply'])} ₺',
                                 style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     color: themeNotifier.isDark
@@ -382,7 +375,7 @@ class _CoinDetailState extends State<CoinDetail> {
                             Text(
                                 widget.coinDetail['total_supply'] == null
                                     ? '?'
-                                    : '\$${NumberFormat('###,###,###,###,###,###,###,###,000').format(widget.coinDetail['total_supply'])}',
+                                    : '${NumberFormat('###,###,###,###,###,###,###,###,000').format(widget.coinDetail['total_supply'])} ₺',
                                 style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     color: themeNotifier.isDark
@@ -414,7 +407,7 @@ class _CoinDetailState extends State<CoinDetail> {
                                         : Colors.grey.shade700,
                                     fontSize: 15)),
                             Text(
-                                '\$${widget.coinDetail['ath'].toDouble().toStringAsFixed(2)}',
+                                '${widget.coinDetail['ath'].toDouble().toStringAsFixed(2)} ₺',
                                 style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     color: themeNotifier.isDark
@@ -446,7 +439,7 @@ class _CoinDetailState extends State<CoinDetail> {
                                         : Colors.grey.shade700,
                                     fontSize: 15)),
                             Text(
-                                '\$${widget.coinDetail['atl'].toDouble().toStringAsFixed(2)}',
+                                '${widget.coinDetail['atl'].toDouble().toStringAsFixed(2)} ₺',
                                 style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     color: themeNotifier.isDark

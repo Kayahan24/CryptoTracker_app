@@ -10,17 +10,13 @@ class OnBoardModel {
 
 class OnBoardModels {
   static final List<OnBoardModel> onBoardItems = [
+    OnBoardModel('Üye Olmanıza Gerek Yok',
+        'Uygulamamızı üye olmadan kullanın. ', 'ic_blockchain'),
     OnBoardModel(
-        'Üye Olmanıza Gerek Yok',
-        'Now you can order food any time right from your mobile. ',
-        'ic_blockchain'),
-    OnBoardModel(
-        'Kolay Bir Şekilde Kullanın',
-        'Now you can order food any time right from your mobile. ',
+        'Kolay Bir Şekilde Hesaplama Yapın',
+        'Coinlerin TL ve USD karşılığındaki değerlerini hesaplayın. ',
         'ic_calculator'),
-    OnBoardModel(
-        'Piyasayı Hızlı Bir Şekilde Takip Edin',
-        'Now you can order food any time right from your mobile. ',
-        'ic_analytic'),
+    OnBoardModel('Piyasayı Hızlı Bir Şekilde Takip Edin',
+        'Güncel verilerle piyasayı takip edin. ', 'ic_analytic'),
   ];
 }
