@@ -269,7 +269,7 @@ class _CoinDetailState extends State<CoinDetail> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('Market Cap',
+                            Text('Piyasa Degeri',
                                 style: TextStyle(
                                     fontWeight: FontWeight.w600,
                                     color: themeNotifier.isDark
@@ -301,7 +301,7 @@ class _CoinDetailState extends State<CoinDetail> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('Trading Volume',
+                            Text('İşlem Hacmi',
                                 style: TextStyle(
                                     fontWeight: FontWeight.w600,
                                     color: themeNotifier.isDark
@@ -333,7 +333,7 @@ class _CoinDetailState extends State<CoinDetail> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('Circulating Supply',
+                            Text('Dolaşan Arz',
                                 style: TextStyle(
                                     fontWeight: FontWeight.w600,
                                     color: themeNotifier.isDark
@@ -365,7 +365,7 @@ class _CoinDetailState extends State<CoinDetail> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('Total Supply',
+                            Text('Toplam Arz',
                                 style: TextStyle(
                                     fontWeight: FontWeight.w600,
                                     color: themeNotifier.isDark
@@ -399,7 +399,7 @@ class _CoinDetailState extends State<CoinDetail> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('All Time High',
+                            Text('En Yüksek Seviye',
                                 style: TextStyle(
                                     fontWeight: FontWeight.w600,
                                     color: themeNotifier.isDark
@@ -431,7 +431,7 @@ class _CoinDetailState extends State<CoinDetail> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('All Time Low',
+                            Text('En Düşük Seviye',
                                 style: TextStyle(
                                     fontWeight: FontWeight.w600,
                                     color: themeNotifier.isDark
