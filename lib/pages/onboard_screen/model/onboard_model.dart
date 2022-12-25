@@ -20,3 +20,4 @@ class OnBoardModels {
         'Güncel verilerle piyasayı takip edin. ', 'ic_analytic'),
   ];
 }
+4
